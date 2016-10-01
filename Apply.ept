@@ -1,0 +1,1228 @@
+ <{include file="Student/Header.ept"}>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="/Public/style/csshake.css" />
+<link rel="stylesheet" type="text/css" href="/Public/style/confirmPop.css" />
+<style type="text/css">
+.style1 {
+	height: 35px;
+}
+
+#botype {
+	color: #000;
+}
+
+#showBankCode .windown-title-2 #windown-close {
+	display: none;
+}
+
+input {
+	border: 1px solid #ccc;
+	height: 28px;
+}
+
+.input_box {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	right: 90px;
+	top: 121px;
+	color: #fff;
+	font-size: 32px;
+	font-family: "Arial", Gadget, sans-serif;
+}
+
+.overdiv {
+	display: none;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	-moz-opacity: 0.4;
+	-webkit-opacity: 0.4;
+	filter: alpha(opacity =     40);
+	opacity: 0.4;
+	z-index: 998;
+}
+
+.overauthdiv {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	-moz-opacity: 0.5;
+	-webkit-opacity: 0.5;
+	filter: alpha(opacity = 50);
+	opacity: 0.5;
+	display: none;
+}
+
+.dialogbox {
+	display: none;
+	border: 2px solid #999999;
+	width: 888px;
+	height: 510px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -444px;
+	margin-top: -240px;
+	z-index: 999;
+	line-height: 40px;
+	color: #fff;
+	text-align: center;
+	font-size: 24px;
+}
+
+.dialogbox h2 {
+	position: relative;
+	margin: 0;
+	background: url(/Public/images/book_mark.gif) 10px center no-repeat
+		#fff3db;
+	padding: 0;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: left;
+	color: #666666;
+	line-height: 30px;
+	padding-left: 38px;
+	height: 30px;
+}
+
+.dialogbox h2 img {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+}
+
+.dialogbox h2 span {
+	cursor: pointer;
+}
+
+.dialog {
+	position: fixed;
+	display: none;
+	text-align: left;
+	z-index: 13;
+	left: 50%;
+	top: 50%;
+	width: 360px;
+	height: 240px;
+	margin-left: -180px;
+	margin-top: -120px;
+	border: 5px solid #3a3d3f;
+	background: #fff;
+}
+
+.dialog a.close_btn {
+	position: absolute;
+	right: 15px;
+	top: 12px;
+	background: url(/Public/images/payment/icon_close.png) no-repeat;
+	height: 14px;
+	width: 14px;
+}
+
+.dialog_title {
+	background: #e5f2c8;
+	height: 38px;
+	line-height: 38px;
+	font-size: 16px;
+	padding-left: 20px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.dialog .dialog_content {
+	padding: 30px 15px 15px 15px;
+	line-height: 24px;
+	font-size: 14px;
+}
+
+.wy-web-319 {
+	position: relative;
+}
+
+.web-319-title {
+	position: absolute;
+	left: 50px;
+	top: 249px;
+	font-size: 18px;
+}
+
+.web-319-title span {
+	display: inline-block;
+	width: 90px
+}
+
+.wy-limit-charts {
+	position: absolute;
+	height: 160px;
+	left: 40px;
+	top: 290px;
+	width: 800px;
+}
+
+.wy-limit-charts-box {
+	overflow: hidden;
+	height: 172px;
+	float: left;
+	margin: 0 10px;
+	width: 750px;
+	border: 1px solid #fff;
+	position: relative;
+}
+
+.wy-limit-charts-box ul {
+	height: 174px;
+	position: absolute;
+}
+
+.wy-limit-charts-box ul li {
+	position: relative;
+	float: left;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	height: 89px;
+	border-bottom: 2px dotted #fff;
+	width: 300px;
+	padding-left: 75px;
+}
+
+.wy-limit-charts-box .icon_head {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -28px;
+}
+
+.wy-limit-charts-box table {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.wy-limit-charts-box table td {
+	vertical-align: middle;
+	text-align: left;
+	line-height: 35px;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.wy-limit-charts a.arrow-left,.wy-limit-charts a.arrow-right {
+	width: 14px;
+	height: 40px;
+	background-image: url(/Public/images/student/icon_jiantou.png);
+	float: left;
+	margin-top: 58px;
+}
+
+.wy-limit-charts a.arrow-left {
+	background-position: left center;
+}
+
+.wy-limit-charts a.arrow-right {
+	background-position: right center;
+}
+
+.wy-limit-charts-box table td a.icon_foot {
+	background: url(/Public/images/student/icon_foot.png) no-repeat left
+		center;
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 30px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.wy-limit-charts-box table td span.foot_number {
+	font-size: 18px;
+	margin-left: 4px;
+}
+
+.big_foot {
+	
+}
+
+.limit_box{
+width: 270px;
+height: 20px;
+line-height: 20px;
+padding: 5px 20px;
+color:#111;
+position:absolute; left:-30px; bottom:70px; display:none; z-index:12; background:rgba(251,251,251,0.2); filter:Alpha(opacity=20); margin:0; font-size:12px; }
+.limit_box i{ position:absolute; top:-20px; left:54px; width:0px; border:10px solid transparent; border-bottom:10px solid rgba(251,251,251,0.2);   height:0px;}
+.limit_box img { display:block; margin:0 auto; padding:0px 0;}
+
+	#whitecolor{
+		display: block;
+		width: 100%;
+		color: #fff;
+		font-size: 14px;
+		margin-bottom: 30px;
+	}
+	#whitecolor .captial{
+		width: 940px;
+		margin: 150px auto 0;
+		text-align: center;
+		background: url(/Public/images/student/whitecolor/bg_captial.png) no-repeat center;
+	}
+	#whitecolor .content{
+		width: 450px;
+		margin: 30px auto;
+	}
+	#whitecolor .content .qr{
+		float: left;
+		margin: 0 5px;
+		width: 215px;
+	}
+	#whitecolor .content .qr div{
+		padding: 10px 30px;
+		word-break: break-all;
+		line-height: 130%;
+	}
+
+</style>
+
+
+<script LANGUAGE="javascript"> 
+$(function(){
+	$(".prompt").hover(function(){
+		var $this=$(this);
+		var target=$("#"+$this.attr("data-target"));
+		
+		target.css({
+			left:($this.position().left+30)+"px",
+			top:($this.position().top+30)+"px",
+		}).show();
+	},function(){
+		$("#"+$(this).attr("data-target")).hide();
+	})
+})
+	</script>
+
+<script language="javascript" type="text/javascript">
+
+
+//滚动代码
+$(document).ready(function()
+{ 
+	new simpleScroll("roll_wrap",0,150,0);
+	
+	<{if $jxhjFlag.flag eq 1}>
+	$.ajax({
+		type: "POST",
+		url: "/Student/TiEBaoDrawMoney",
+	    data: {'input_money':$('#price').val()},
+	    dataType:"text",
+	    beforeSend:function(){
+			$("#reborrow_money").html("<img src='/Public/images/load.gif' width='12' />");
+		},
+	    success: function(str) {   
+			var data = eval('(' + str + ')');
+	        if(data.is_draw_money==1) {
+	            reborrow_money = data.draw_money;
+	            $("#reborrow_money").html(reborrow_money.toFixed(2));
+	        } else {    
+	        	$("#reborrow_money").html("0");
+	        }
+	    }
+	});
+	<{/if}>
+	
+});
+
+    function buttonConfirm() 
+    {   
+        
+        
+    	if($('#p_id').val()==83)
+    	{
+    		$('#p_id').val(77);
+    	}
+    	
+        var price = $('#price').val();
+        if ($('#useway').val()=="") 
+        {
+            alert('请填写借款用途');
+            $('#useway').focus();
+            return;
+        }
+        else if($.trim($('#useway1').val())=="")
+        {
+        	 alert('请填写详细用途');
+             $('#useway1').focus();
+             return;
+        }
+
+        if($.trim($('#useway1').val()).length<10)
+        {
+        	 alert('详细用途不少于10字');
+             $('#useway1').focus();
+             return;
+        }
+
+        if (price == '(<{$product.p_price_min/1000}>千~<{$product.p_price_max/10000}>万)'||price == '(1百~1千)') {
+            alert('请填写借款金额');
+            $('#price').focus();
+            return;
+        }
+
+
+        // 是否选择1月应急包
+    	if($('#expect4').attr('checked')||$('#expect5').attr('checked')||$('#expect6').attr('checked'))
+		{
+	        if (price<100 || price>1000) {
+	            alert('名校贷应急包金额要在100元~1000元之间');
+	            $('#price').focus();
+	            return;
+	        }
+
+	        $('#p_id').val(83);
+		}else if($('#expect7').attr('checked')||$('#expect8').attr('checked')||$('#expect9').attr('checked')){
+		
+		   
+		      $('#p_id').val(87);
+		      if (price< <{$product.p_price_min}> || price > <{$product.p_price_max}> ) {
+ 	            alert('借款需介于'+<{$product.p_price_min}>+'元~'+<{$product.p_price_max}>+'元之间');
+ 	            $('#price').focus();
+ 	            return;
+ 	        }
+		 }else if($('#expect10').attr('checked')||$('#expect11').attr('checked')||$('#expect12').attr('checked')){
+		
+		   
+		      $('#p_id').val(88);
+		      if (price< <{$product.p_price_min}> || price > <{$product.p_price_max}> ) {
+ 	            alert('借款需介于'+<{$product.p_price_min}>+'元~'+<{$product.p_price_max}>+'元之间');
+ 	            $('#price').focus();
+ 	            return;
+ 	        }
+		 }
+		 else if($('#expect13').attr('checked')||$('#expect14').attr('checked')||$('#expect15').attr('checked')){
+				
+			   
+		      $('#p_id').val(88);
+		      if (price< <{$product.p_price_min}> || price > <{$product.p_price_max}> ) {
+	            alert('借款需介于'+<{$product.p_price_min}>+'元~'+<{$product.p_price_max}>+'元之间');
+	            $('#price').focus();
+	            return;
+	        }
+		 }
+    	else
+    	{
+    		 if (price< <{$product.p_price_min}> || price > <{$product.p_price_max}> ) {
+ 	            alert('借款需介于'+<{$product.p_price_min}>+'元~'+<{$product.p_price_max}>+'元之间');
+ 	            $('#price').focus();
+ 	            return;
+ 	        }
+    	}
+    	
+    	if(!$('#expect1').attr('checked')&& !$('#expect2').attr('checked') && !$('#expect3').attr('checked') &&
+    	   !$('#expect4').attr('checked')&& !$('#expect5').attr('checked') && !$('#expect6').attr('checked') &&
+    	   !$('#expect7').attr('checked')&& !$('#expect8').attr('checked') && !$('#expect9').attr('checked') &&
+    	   !$('#expect10').attr('checked')&& !$('#expect11').attr('checked') && !$('#expect12').attr('checked') &&
+    	   !$('#expect13').attr('checked')&& !$('#expect14').attr('checked') && !$('#expect15').attr('checked')){
+    	     alert('请选择借款期限');
+    	     return;
+    	}
+    	
+    	if($('#expect7').attr('checked')||$('#expect8').attr('checked')||$('#expect9').attr('checked')){
+    	    $('#p_id').val(87);
+    	     $('#is_raise').val(0);
+    	}
+    	if($('#expect1').attr('checked')||$('#expect2').attr('checked')||$('#expect3').attr('checked')){
+    	    $('#p_id').val(77);
+    	     $('#is_raise').val(0);
+    	}
+    	if($('#expect10').attr('checked')||$('#expect11').attr('checked')||$('#expect12').attr('checked')){
+    	    $('#p_id').val(88);
+    	     $('#is_raise').val(0);
+    	  
+    	}if($('#expect13').attr('checked')||$('#expect14').attr('checked')||$('#expect15').attr('checked')){
+    	    $('#p_id').val($('#expect13').attr('data-p_id'));
+    	    $('#is_raise').val(1);
+    	}
+    	
+    	
+       $("#btnsubmit").attr("disabled","disabled");
+	   $("#btnsubmit").text("正在提交...");
+        $.ajax({
+            type: "POST",
+            url: "/Student/DoApply",
+            data: $('#stuform').serialize(),
+            dataType:"text",
+            success: function(str) 
+            {   
+				var data = eval('(' + str + ')');
+                if(data.result==1)
+                {
+                    window.location.href="/Student/Improve";
+                }
+                else
+                {    
+                    
+                	 $("#btnsubmit").removeAttr("disabled");
+                     $("#btnsubmit").text("提交");
+                     $("#showbankcodelink").hide();
+                     $("#goNext").removeAttr("disabled");
+                     $("#goBack").removeAttr("disabled");
+					$("#goNext").text("下一步");
+                     $("#limitTime").html(data.time);
+                    if(data.msg=="申请限制" || data.flag == 17 || data.flag == 18 || data.flag == 19 ||  data.flag == 20)
+                    {
+                        // 是否选择1月应急包
+                        
+                    if($('#expect4').attr('checked')||$('#expect5').attr('checked')||$('#expect6').attr('checked'))
+                	{
+                    	if(data.flag == 18)
+                        {
+                        	dialogShow(4);
+                        }else{
+							if(data.flag == 20){
+								$("#showbankcodelink").hide();
+								dialogShow(2);
+								
+								
+								
+							} else if(data.flag==19){
+                            	$("#disablebtn1").show();
+                            	$("#showbankcodelink").hide();
+                            	dialogShow(2);
+                           }else if(data.flag == 17){
+								$("#showbankcodelink").show();
+								useBankcode('limit1',data.bankcode);
+                            }
+                        }
+                   }else if($('#expect7').attr('checked')||$('#expect8').attr('checked')||$('#expect9').attr('checked')){
+                   
+                    if(data.flag == 18)
+                        {
+                        	dialogShow(5);
+                        	$("#showbankcodelink").hide();
+                        }else{
+							if(data.flag == 20){
+								$("#showbankcodelink").hide();
+								dialogShow(5);
+								
+								
+								
+							} else if(data.flag==19){
+                            	$("#disablebtn5").show();
+                            	$("#showbankcodelink").hide();
+                            	dialogShow(5);
+                           }else if(data.flag == 17){
+								$("#showbankcodelink").show();
+								useBankcode('limit5',data.bankcode);
+                            }
+                        }
+                   }else if($('#expect10').attr('checked')||$('#expect11').attr('checked')||$('#expect12').attr('checked')){
+                   
+                    if(data.flag == 18)
+                        {
+                        	dialogShow(6);
+                        	$("#showbankcodelink").hide();
+                        }else{
+							if(data.flag == 20){
+								$("#showbankcodelink").hide();
+								dialogShow(6);
+								
+								
+								
+							} else if(data.flag==19){
+                            	$("#disablebtn6").show();
+                            	$("#showbankcodelink").hide();
+                            	dialogShow(6);
+                           }else if(data.flag == 17){
+								$("#showbankcodelink").show();
+								useBankcode('limit6',data.bankcode);
+                            }
+                        }
+                   }
+                   else
+                    	{
+                        	if(data.flag == 18)
+                        	{
+                        		dialogShow(3);
+                        		$("#showbankcodelink").hide();
+                            }else{
+                            		if(data.flag == 20){
+                            			$.ajax({
+                            				type:"post",
+                            				url:"/Student/FastestList/",
+                            				success:function(data){
+                            					$(".wy-limit-charts-box ul").html(data);
+                            					$("#dayfast").html(data.time);
+                            					slideData();
+                            					}
+                            			});
+                            			$("#showbankcodelink").hide();
+					dialogShow(1);
+                            		}else  if (data.flag == 19) {
+				$("#disablebtn").show();
+				$("#showbankcodelink").hide();
+					dialogShow(1);
+				} else if (data.flag == 17) {
+					$.ajax({
+						type:"post",
+						url:"/Student/FastestList/",
+						success:function(data){
+        					$(".wy-limit-charts-box ul").html(data);
+        					$("#dayfast").html(data.time);
+							slideData();
+							}
+					});
+					$("#showbankcodelink").show();
+					useBankcode(-1,data.bankcode);
+				}
+                            }
+                    	}
+                    }
+                    else if(data.flag == 21)
+                    {
+                    	$("#dialogDiv").hide();
+                    	$('#dialog_content').html(data.msg);
+                    	showAuthDialog('dialog');
+				    	$(".close_btn").click(function(){ //关闭弹出框
+							$(this).parent().hide();
+							$(".overauthdiv").hide();
+		                    $("#btnsubmit").removeAttr("disabled");
+		                    $("#btnsubmit").text("提交");
+						})
+                    }
+                    else
+                    {
+                    	alert(data.msg);
+                    }
+                    
+                }
+            }
+        });
+       
+}
+
+function chackExpect(t)
+{
+	
+}
+    
+$(document).ready(function() 
+{
+    initUserBoard();
+    
+});
+
+function useWay(obj){
+    $("#useWayDetail").css("display","none");
+     var usewayID = $("#useway").val();
+     if(usewayID =='其他' ){
+       $("#useWayDetail").css("display","");
+     }
+}
+
+function initUserBoard()
+{
+    jQuery.ajax({
+            type:"POST",
+            url:"/Student/StudentTotal",
+            global:false,
+            dataType:"json",
+            success:function(data)
+            {
+            	 if(data)
+                 {
+  	               setStuNum(data.num);
+                 }
+            },
+            error:function()
+            {
+           
+            }
+            });
+}
+
+function getSchooles()
+{
+    jQuery.ajax({
+            type:"POST",
+            url:"/Student/GetSchooles",
+            data:'ss_address='+$('#province').val(),
+            dataType:"json",
+            success:function(data)
+            {
+               $('#schooles').html(data.schooles);
+            },
+            error:function()
+            {
+           
+            }
+            });
+
+}
+
+function padleft(str,len,cha)
+{
+    var chalist='';
+    for(var i=0;i<len-str.toString().length;i++)
+    {
+        chalist+=cha;
+    }
+    
+    return chalist+str;
+}
+
+function setStuNum(num)
+{
+    var strNum=padleft(num,7,'0');
+    $('#Ls1').html(strNum.substr(0,1));
+    $('#Ls2').html(strNum.substr(1,1));
+    $('#Ls3').html(strNum.substr(2,1));
+    $('#Ls4').html(strNum.substr(3,1));
+    $('#Ls5').html(strNum.substr(4,1));
+    $('#Ls6').html(strNum.substr(5,1));
+    $('#Ls7').html(strNum.substr(6,1));
+}
+
+function useBankcode(id,bankcode)
+{
+	dialogClose();
+
+	title="名校贷镑客码验证";
+	$("#bankcodetips").text("镑客码是镑客特权II，只作为奖励给予有特殊贡献的老会员。");
+	$("#bankcode").val("请输入MX开头的镑客码");
+	$("#bankcode").val(bankcode);
+	
+	if(id=="limit1")
+	{
+		title="名校贷应急包镑客码验证";
+		$("#bankcodetips").text("应急包镑客码是镑客特权III，只作为奖励给予有特殊贡献的老会员。");
+		$("#bankcode").val("请输入YJB开头的镑客码");
+		$("#bankcode").val(bankcode);
+		
+	}else if(id=="limit5"){
+	
+	    title="白领包镑客码验证";
+		$("#bankcodetips").text("白领包镑客码是镑客特权IIII，只作为奖励给予有特殊贡献的老会员。");
+		$("#bankcode").val("请输入BLB开头的镑客码");
+		$("#bankcode").val(bankcode);
+		
+	}else if(id=="limit6"){
+	    title="专科包镑客码验证";
+		$("#bankcodetips").text("专科包镑客码是镑客特权IIII，只作为奖励给予有特殊贡献的老会员。");
+		$("#bankcode").val("请输入ZKB开头的镑客码");
+		$("#bankcode").val(bankcode);
+	}
+	$("#dialogDiv").hide();
+	tipsWindown(title, "id:showBankCode", "420", "320", "true", "", "true", "book_mark.gif","false");
+	
+}
+
+function checkBankcode()
+{
+	 $("#validmsg").text("系统正在验证...");
+     $.ajax({
+            type: "POST",
+            url: "/Licai/AjaxValidBankCode/0/"+$('#p_id').val(),
+            data: $('#bankcodeform').serialize(),
+            dataType:"json",
+            success: function(data) 
+            {
+                if(data.result==1)
+                {
+                	$('#mybankcode').val(1);
+                	$('#mxd_bankcode').val($('#bankcode').val());
+                	buttonConfirm();
+                }
+                else
+                {
+					 $("#validmsg").text(data.msg);
+                }
+            }
+     });
+}
+function dialogClose(){
+	$(".dialogbox").hide();
+	$(".overdiv").hide();
+}
+function dialogShow(t){
+	$(".dialogbox").hide();
+	$("#d"+t).show();
+	$(".overdiv").show();
+}
+function showAuthDialog(id){
+	$("#"+id).show();
+	$(".overauthdiv").show();
+}
+</script>
+<div class="blue">
+	<div style="margin-left: 20px;">
+		<div>
+			<div style="clear: left; float: left; width: 940px;">
+				<div style="text-align: left;">
+					<div style="float: left; margin-top: 30px;">
+						<img src="/Public/images/student/xsd001_19_01.png?v=1" alt="">
+					</div>
+					<div style="float: left;margin-top:62px;color:#f8d735;font-size:16px;"></div>
+				</div>
+
+				<{if $white_status eq 0}>
+				<!--白领版1.1 资料未过期 begin-->
+				<form id="stuform" method="post" action="DoStudentReg">
+					<!-- 提额包 v1.1
+						2016-04-19
+					-->
+					<{if $jxhjFlag.flag eq 1}>
+					<{$html_hidden}>
+					<{include file="Student/Template/product_reborrow.ept"}>
+					<{else}>
+					<{$html_hidden}> <{if $product.p_id eq 81 or $product.p_id eq 82}>
+					<{include file="Student/Template/product_lvyou.ept"}> <{else}>
+					<{include file="Student/Template/product_default.ept"}> <{/if}>
+					<{/if}>
+					
+					<input type="hidden" id='can_use_flag' name='can_use_flag' value="-3"/>
+					<table class="tb" style="clear: left;">
+						<tr>
+							<td colspan="5" align="center"><{if !$user}> <span> <input
+									id="reg_check" checked type="checkbox" style="vertical-align: middle;" />我已阅读并同意 <a
+									style="color: Gold; line-height: 20px; "
+									href="javascript:void($('#divTerms').toggle());">《服务协议》及《隐私条款》</a>
+							</span><br /> <br /> <{/if}> <input id="p_id" type="hidden"
+								name="p_id" value="<{$product.p_id}>" /> <input type="hidden"
+								name="am_id_follow" id="am_id_follow" value="<{$smarty.get.id}>" />
+								<input type="hidden" name="approach2" id="approach2"
+								value="<{$smarty.cookies.approach2}>" /> <input type="hidden"
+								name="approach3" id="approach3"
+								value="<{$smarty.cookies.approach3}>" /> <input type="hidden"
+								name="approach" id="approach"
+								value="<{$smarty.cookies.approach}>" /> 
+								
+								<{if $mxd_bankCode}>
+									<input type="hidden" name="mybankcode" id="mybankcode" value="1">
+								<{else}>
+									<input type="hidden" name="mybankcode" id="mybankcode" value="0">
+								<{/if}>
+								<input type="hidden" id="mxd_bankcode" name="mxd_bankcode" value="<{$mxd_bankCode}>" />
+								
+								<!-- 以前点“提交”直接调用buttonConfirm()，改为现在先调用showDialogBox()弹出提交信息预览框，点击下一步调用goNext()之后再调用buttonConfirm() -->
+								<{if $jxhjFlag}>
+									<button id="btnsubmit" type="button" onclick="showDialogBox(<{$jxhjFlag.prd}>, <{$jxhjFlag.isEdu}>, <{$jxhjFlag.jxhjAfter}>);"style="width: 120px; height: 40px; background: none repeat scroll 0% 0% #FF9F00; padding: 5px; font-weight: bold; color: #FFF; font-size: 16px; border: 0px none;">
+								<{else}>
+									<button id="btnsubmit" type="button" onclick="showDialogBox(-1, -1, -1);"style="width: 120px; height: 40px; background: none repeat scroll 0% 0% #fbc24c; padding: 5px; font-weight: bold; color: #FFF; font-size: 16px; border: 0px none;">
+								<{/if}>
+									<span>提交</span>
+								</button>
+							</td>
+						</tr>
+					</table>
+
+				</form>
+				<!--------新增---------->
+				<div style="padding-top: 60px; padding-bottom: 20px; text-align: center;">
+					<div style="float: left; padding: 0 50px 0 250px;">
+						<img src="/Public/images/student/qrcode_e_01.png?v=1" alt="">
+					</div>
+					<div style="float: left; padding: 3px 0px 50px 10px;">
+						<img src="/Public/images/student/qrcode_ew_01.png?v=1" alt="">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!--------新增 end---------->
+				<!--白领版1.1 资料未过期 end-->
+				<{else}>
+				<!--白领版1.1 资料已过期 begin-->
+				<div id="whitecolor">
+					<div class="captial">您的学籍资料已过期</div>
+					<div class="content">
+						<div class="qr">
+							<img src="/Public/images/student/whitecolor/qr_mxdapp.png" />
+							<div>若您未毕业，请到名校贷app中更新您的学籍信息<{if $yjzj eq 1}>，并使用一键再借<{/if}>。</div>
+						</div>
+						<div class="qr">
+							<img src="/Public/images/student/whitecolor/qr_whitecolorapp.png" />
+							<div>若您已毕业，请下载白领版app借款。</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!--白领版1.1 资料已过期 end-->
+				<{/if}>
+			</div>
+		</div>
+		<div class=clear></div>
+	</div>
+	<div class="yellow">
+		<div>
+			<div>
+				<div class="pink" style="margin-left: 60px; padding-left: 10px;">
+					<div style="text-align: left;">
+						<img src="/Public/images/student/xsd001_55_01.png?v=1" width="298" alt="">
+					</div>
+					<ul>
+						<li id="Ls1">0</li>
+						<li id="Ls2">0</li>
+						<li id="Ls3">0</li>
+						<li id="Ls4">0</li>
+						<li id="Ls5">0</li>
+						<li id="Ls6">0</li>
+						<li id="Ls7">0</li>
+					</ul>
+				</div>
+				<div class="pink" style="margin-left: 60px; text-align: left;">
+					<img src="/Public/images/student/xsd001_57_01.png?v=1" width="295"
+						alt="名校贷官网申请"><br />
+					<ul id="roll_wrap"
+						style="overflow: hidden; height: 60px; width: 320px;">
+						<{foreach item=list from=$stulist}>
+						<li
+							style="margin-top: 0px; width: 350px; height: 20px; background: none; color: black; font-weight: normal;">
+							<span style="font-size: 12px;"><{$list.institution}>
+								<{$list.m_username}>已申请<{$list.bo_price}>元</span>
+						</li> <{/foreach}>
+					</ul>
+				</div>
+			</div>
+			<div style="clear: left;">
+				<div
+					style="float: left; margin-top: 20px; margin-left: 20px; width: 800px;">
+					<div style="float: left;">
+						<img src="/Public/images/student/xsd001_64_01.png?v=1" alt="">
+					</div>
+					<div
+						style="float: left; margin-top: 15px; margin-left: 10px; width: 680px; text-align: left;">
+						<div>
+							<img src="/Public/images/student/activity_01.png?v=1" alt="">
+						</div>
+						<br />
+						<div>
+							<b>大学生借款平台名校贷</b>倾力支持高校学生实践活动。截至目前，<b>名校贷</b>已赞助了复旦、上财、华政、华师大等十二所上海知名高校的“诺启梦想——健康阳光单车行”社团活动：
+						</div>
+					</div>
+				</div>
+				<div
+					style="clear: left; margin-top: 20px; margin-left: auto; margin-right: auto; width: 880px;">
+					<!--<div style="float:left;margin-top:70px; ">
+            <img src="/Public/images/student/xsd001_66.png" style="cursor:pointer;" alt=""></div>-->
+					<div style="float: left; margin-top: 20px; margin-left: 60px;">
+						<img src="/Public/images/student/xsd_1.jpg"
+							style="width: 200px; height: 130px; margin-left: 30px;" alt=""> <img
+							src="/Public/images/student/xsd_2.jpg"
+							style="width: 200px; height: 130px; margin-left: 30px;" alt=""> <img
+							src="/Public/images/student/xsd_3.jpg"
+							style="width: 200px; height: 130px; margin-left: 30px;" alt="">
+					</div>
+					<!--  <div style="float:left;margin-top:70px; margin-left:20px ">
+            <img src="/Public/images/student/xsd001_67.png" style="cursor:pointer;" alt="">-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="divTerms"
+	style="display: none; position: absolute; top: 100px; left: 200px; background: #CCC; border: solid 1px #CCC; padding: 5px;">
+	<div style="background: #FFF; border: solid 1px #CCC; padding: 15px">
+		<table width="500px" border="0" cellspacing="0" cellpadding="0"
+			id="info_mp">
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="font14 jc"><img src="/Public/images/member/read_icon.gif"
+					width="41" height="37" align="absmiddle" /> 诺诺镑客服务协议及隐私条款</td>
+				<td style="float: right; padding-right: 18px; text-align: right"><a
+					href="javascript:void($('#divTerms').css('display','none'));"><img
+						src="/Public/images/register/cp-close.png" /></a></span></td>
+			</tr>
+			<tr>
+				<td height="20"></td>
+				<td height="20"></td>
+				<td height="20"></td>
+			</tr>
+			<tr>
+				<td style="width: 10px"></td>
+				<td>
+					<div
+						style="width: 355px; height: 450px; border: 1px solid #ccc; overflow: scroll; overflow-x: hidden;">
+						<div style="padding: 10px; color: Black"><{$site.s_member_info}></div>
+					</div>
+				</td>
+				<td>
+					<div
+						style="width: 355px; height: 450px; border: 1px solid #ccc; overflow: scroll; overflow-x: hidden;">
+						<div style="padding: 10px; color: Black"><{$site.s_privacy_policy}></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" height="15px"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="20" align="center"><a
+					href="javascript:void($('#divTerms').css('display','none'));"><img
+						src="/Public/images/register/btn_terms.gif" /></a></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="15px"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<div class="dialogbox" id="d1">
+	<div id="disablebtn"
+		style="position: absolute; right: 32px; top: 60px; width: 130px; height: 130px; background: #000; -moz-opacity: 0; -webkit-opacity: 0; filter: alpha(opacity =     0); opacity: 0; z-index: 999; display: none;"></div>
+	<h2>
+		<span onclick="dialogClose()"><img src="/Public/images/close2.gif" /></span>
+		名校贷申请限制
+	</h2>
+	<div class="wy-web-319">
+		<div class="web-319-title">
+			<span><{$dayfastdate}></span> 手速最快排行榜
+		</div>
+		<div class="wy-limit-charts">
+			<a href="javascript:void(0)" class="arrow-left"></a>
+			<div class="wy-limit-charts-box">
+				<ul style="margin:0; padding: 0">
+
+				</ul>
+			</div>
+			<a href="javascript:void(0)" class="arrow-right"></a>
+		</div>
+		<img src="/Public/images/student/limit4.jpg" alt="" usemap="#Map">
+		<map name="Map" id="Map">
+			<area shape="rect" coords="405,361,566,434"
+				href="javascript:dialogClose()" />
+			<area shape="rect" coords="731,29,858,146"
+				href="javascript:useBankcode('limit');" />
+		</map>
+	</div>
+</div>
+<div class="dialogbox" id="d2">
+	<div id="disablebtn1"
+		style="position: absolute; right: 0px; top: 30px; width: 360px; height: 130px; background: #000; -moz-opacity: 0; -webkit-opacity: 0; filter: alpha(opacity =     0); opacity: 0; z-index: 999; display: none;"></div>
+	<h2>
+		<span onclick="dialogClose()"><img src="/Public/images/close2.gif" /></span>
+		名校贷申请限制
+	</h2>
+	<div>
+		<img src="/Public/images/student/limit1.jpg" alt="" usemap="#Map1">
+		<map name="Map1" id="Map1">
+			<area shape="rect" coords="149,376,340,433"
+				href="javascript:dialogClose()" />
+			<area shape="rect" coords="531,4,883,97"
+				href="javascript:useBankcode('limit1');" />
+		</map>
+	</div>
+</div>
+<div class="dialogbox" id="d3">
+	<h2>
+		<span onclick="dialogClose()"><img src="/Public/images/close2.gif" /></span>
+		名校贷申请限制
+	</h2>
+	<div>
+		<img src="/Public/images/student/limit2.jpg" alt="" usemap="#Map">
+		<map name="Map" id="Map">
+			<area shape="rect" coords="405,361,566,434"
+				href="javascript:dialogClose()" />
+			<area shape="rect" coords="731,29,858,146"
+				href="javascript:useBankcode('limit');" />
+		</map>
+	</div>
+</div>
+<div class="dialogbox" id="d4">
+	<h2>
+		<span onclick="dialogClose()"><img src="/Public/images/close2.gif" /></span>
+		名校贷申请限制
+	</h2>
+	<div>
+		<img src="/Public/images/student/limit3.jpg" alt="" usemap="#Map1">
+		<map name="Map1" id="Map1">
+			<area shape="rect" coords="149,376,340,433"
+				href="javascript:dialogClose()" />
+			<area shape="rect" coords="531,4,883,97"
+				href="javascript:useBankcode('limit1');" />
+		</map>
+	</div>
+</div>
+<div class="dialogbox" id="d5">
+	<div id="disablebtn5"
+		style="position: absolute; right: 32px; top: 60px; width: 130px; height: 130px; background: #000; -moz-opacity: 0; -webkit-opacity: 0; filter: alpha(opacity =     0); opacity: 0; z-index: 999; display: none;"></div>
+	<h2>
+		<span onclick="dialogClose()"><img src="/Public/images/close2.gif" /></span>
+		白领包申请限制
+	</h2>
+	<div>
+		<img src="/Public/images/student/limit5.jpg" alt="" usemap="#Map2">
+		<map name="Map2" id="Map2">
+			<area shape="rect" coords="383,360,579,442"
+				href="javascript:dialogClose()" />
+			<area shape="rect" coords="731,26,852,139"
+				href="javascript:useBankcode('limit5');" />
+		</map>
+	</div>
+</div>
+
+<div class="dialogbox" id="d6">
+	<div id="disablebtn6"
+		style="position: absolute; right: 32px; top: 60px; width: 130px; height: 130px; background: #000; -moz-opacity: 0; -webkit-opacity: 0; filter: alpha(opacity =     0); opacity: 0; z-index: 999; display: none;"></div>
+	<h2>
+		<span onclick="dialogClose()"><img src="/Public/images/close2.gif" /></span>
+		专科包申请限制
+	</h2>
+	<div style="position:relative;">
+		<div style="position:absolute; left:140px; top:145px;" id="limitTime">
+		24
+		</div>
+		<img src="/Public/images/student/limit6.jpg" alt="" usemap="#Map3" width="100%">
+		<map name="Map3" id="Map3">
+			<area shape="rect" coords="383,360,579,442"
+				href="javascript:dialogClose()" />
+			<area shape="rect" coords="731,26,852,139"
+				href="javascript:useBankcode('limit6');" />
+		</map>
+	</div>
+</div>
+
+<div id="dialog" class="dialog">
+	<a href="javascript:void(0)" class="close_btn"></a>
+	<div class="dialog_content">
+		<div id="dialog_content"></div>
+		<div style="text-align: center;">
+			<button type="button"
+				onclick="window.location.href='/Student/Register?p_id=77'"
+				style="margin-top: 10px; width: 160px; height: 40px; padding: 5px; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; border: 0px none; cursor: pointer; background: none 0% 0% repeat scroll rgb(255, 159, 0);">
+				<span>前往信息验证</span>
+			</button>
+		</div>
+	</div>
+</div>
+<div class="overdiv"></div>
+<div class="overauthdiv"></div>
+
+
+
+<!-- 1月名校贷应急包 -->
+
+<div id="showBankCode"
+	style="border-top: solid 1px #ccc; padding-left: 25px; padding-right: 25px; display: none;">
+	<div style="margin-top: 20px; color: green;">
+		<label id="bankcodetips">镑客码是镑客特权II，只作为奖励给予有特殊贡献的老会员。</label> <br>
+	</div>
+	<form id="bankcodeform" action="" style="margin-top: 20px;">
+		<div
+			style="float: left; width: 100px; line-height: 30px; text-align: right; padding-right: 10px; font-weight: bold;">镑客码:</div>
+		<div>
+			<input type="text" id="bankcode" name="bankcode"
+				onfocus="if(value=='请输入MX开头的镑客码'||value=='请输入YJB开头的镑客码' || value=='请输入BLB开头的镑客码' || value=='请输入ZKB开头的镑客码')value=''"
+				onblur="if (value ==''){if($('#expect4').attr('checked')||$('#expect5').attr('checked')||$('#expect6').attr('checked')){value='请输入YJB开头的镑客码'}
+				else if($('#expect7').attr('checked')||$('#expect8').attr('checked')||$('#expect9').attr('checked')){value='请输入BLB开头的镑客码'}
+				else if($('#expect10').attr('checked')||$('#expect11').attr('checked')||$('#expect12').attr('checked')){value='请输入ZKB开头的镑客码'}
+				else{value='请输入MX开头的镑客码'}}" />
+		</div>
+		<div
+			style="text-align: center; margin-top: 10px; margin-bottom: 20px;">
+			<label id="validmsg" style="color: red;"></label>
+		</div>
+		<div style="text-align: center;">
+			<button id="btnsubmit" type="button" onclick="checkBankcode()"
+				style="width: 120px; display:inline-block; height: 40px; background: none repeat scroll 0% 0% #FF9F00; padding: 5px; font-weight: bold; color: #FFF; font-size: 16px; border: 0px none;">
+				<span>提交</span>
+			</button>
+			<button type="button" onclick="closeWindow('showBankCode')"
+				style="margin-left: 10px; display:inline-block; width: 120px; height: 40px; background: none repeat scroll 0% 0% #FF9F00; padding: 5px; font-weight: bold; color: #FFF; font-size: 16px; border: 0px none;">
+				<span>取消</span>
+			</button>
+		</div>
+	</form>
+	<div style="text-align: center; margin-top: 20px;">关注“woshibangke”，获取更多镑客码信息</div>
+	<br />
+	<div style="display: none" id="showbankcodelink">
+		镑客码的功能：1，没有申请名额时，可直接申请借款；    2，审核将被优先安排，专人专审；<br />       
+镑客码的发放渠道和条件：   1，老用户可直接向名校贷工作人员申请镑客码；  2，参与活动，系统发放镑客码至平台账户；    3，从官方认可的学校对应地区校园大使处，获取镑客码；
+	<br /><a href="/Bankcode/Code" target="_black" style="float:right">点此查看可用镑客码</a>
+	</div>
+</div>
+<div id="dialogDiv" style="display: none;">
+	<div class="cover" id="cover" ></div><!--阴影 -->
+	<div class="layout" id="layout">
+		<div class="layoutBox">
+			<p class="p_dialog"><span style="font-weight:bold;">借款产品：</span><span id="dialog_product"></span></p>
+			<p class="p_dialog"><span style="font-weight:bold;">借款期数：</span><span id="dialog_expect"></span>期</p>
+			<p class="p_dialog"><span style="font-weight:bold;">借款金额：</span><span id="dialog_amount"></span>元</p>
+			<p class="hint_dialog"><span id="dialog_jianxi"></span></p>
+			<div>
+				<button class="button_dialog" id="goBack" onClick="goBack()">返回修改 </button>
+				<button class="button_dialog orange" id="goNext" onClick="goNext()">下一步</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function slideData(){
+	var slideNo=0;
+	var unitWidth=$(".wy-limit-charts ul").find("li").eq(0).outerWidth();
+		$(".wy-limit-charts ul").width(function(){
+		  return reCountLength()*unitWidth;
+		})
+		function reCountLength(){
+			var ullength=$(".wy-limit-charts ul").find("li").length/2;
+				return Math.ceil(ullength);	
+		}
+		
+		 $(".arrow-left").unbind().bind("click",function(e){
+             slideNo--;
+             if(slideNo<0){slideNo=0; return;}
+             slideAnimateTable(-unitWidth*slideNo);
+             e.stopPropagation();
+        })
+        $(".arrow-right").unbind().bind("click",function(e){
+             slideNo++;
+             if(slideNo>reCountLength()-2){slideNo=reCountLength()-2; return;}
+             slideAnimateTable(-unitWidth*slideNo);
+             e.stopPropagation();
+        })
+        function slideAnimateTable(slideNum){
+		       
+             $(".wy-limit-charts-box ul").stop().animate({"left":slideNum+"px"});
+        }
+
+	$(".icon_foot").unbind().bind("click",function(){
+		var _this=$(this);
+		if($(".big_foot").length>0){ return;}
+		var bigfoot=$("<img class='big_foot' height='300' style='position:absolute; left:50%; z-index:1030; top:50%; margin-left:-85px; margin-top:-150px;' src='/Public/images/student/icon_foot_big.png' />");
+		$("body").append(bigfoot);
+		bigfoot=null;
+		var bigfootleft=_this.parents("li").eq(0).offset().left+parseInt(_this.parents("li").eq(0).width()-50);
+		var bigfoottop=_this.parents("li").eq(0).offset().top+parseInt(_this.parents("li").eq(0).height()*2-20);
+		var bigfootheight=80;
+		
+		$(".big_foot").stop().animate({"left":bigfootleft+"px","top":bigfoottop+"px","height":bigfootheight+"px"},"fast",function(){
+			_this.parents("div.dialogbox").addClass("shake shake-constant");
+			setTimeout(function(){_this.parents("div.dialogbox").removeClass("shake shake-constant")},200)
+			$(".big_foot").fadeOut("normal",function(){
+				$(".big_foot").remove();
+				});
+			})
+		
+		})
+			
+}
+
+</script>
+<br />
+<script type="text/javascript" src="/Public/js/divCycle.js"></script>
+
+<{include file="Layout/FooterIcon.ept"}> <{include file="Common/FooterJs.ept"}>
+<!--SEM百度统计代码-->
+<{include file="Common/SEMJs.ept"}>
+</body>
+</html>
